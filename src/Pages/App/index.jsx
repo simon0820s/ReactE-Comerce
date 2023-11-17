@@ -1,8 +1,21 @@
+import Home from '../Home'
+import MyAccount from '../MyAccount'
+import MyOrder from '../MyOrder'
+import MyOrders from '../MyOrders'
+import NotFound from '../NotFound'
+import SignIn from '../SignIn'
 import "./App.css"
 
 const App = () => {
   return (
-    <div className="bg-red-500">App</div>
+    <div className="bg-red-500">
+      <Home />
+      <MyAccount />
+      <MyOrder />
+      <MyOrders />
+      <NotFound />
+      <SignIn />
+    </div>
   )
 }
 
