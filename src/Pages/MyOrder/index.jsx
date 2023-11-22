@@ -1,6 +1,6 @@
 import Layout from "../../Components/Layout"
 
-const index = () => {
+const MyOrder = () => {
   return (
     <Layout>
       MyOrder
@@ -8,5 +8,5 @@ const index = () => {
   )
 }
 
-export default index
+export default MyOrder
 

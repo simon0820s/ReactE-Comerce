@@ -1,6 +1,6 @@
 import Layout from "../../Components/Layout"
 
-const index = () => {
+const MyOrders = () => {
   return (
     <Layout>
       MyOrders
@@ -8,4 +8,4 @@ const index = () => {
   )
 }
 
-export default index
+export default MyOrders
