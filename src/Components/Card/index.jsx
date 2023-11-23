@@ -7,14 +7,17 @@ const Card = (data) => {
   const context = useContext(ShoppingCartContext)
 
   const showProduct = (productDetail) => {
+    context.closeCheckoutSideMenu()
     context.openProductDetail()
     context.setProductToShow(productDetail)
   }
 
-  const addProductToCart = (productData) => {
+  const addProductToCart = (event, productData) => {
+    event.stopPropagation()
     context.setCartProducts([... context.cartProducts, productData])
     context.setCount(context.count + 1)
-    console.log(context.cartProducts)
+    context.closeProductDetail()
+    context.openCheckoutSideMenu()
   }
 
   return (
@@ -28,7 +31,7 @@ const Card = (data) => {
           className="absolute top-0 right-0 flex justify-center items-center w-6 h-6 rounded-full m-2">
           <PlusCircleIcon
            className="h-6 w-6 text-gray-900" 
-           onClick={() => addProductToCart(data.data)} />
+           onClick={(event) => addProductToCart(event, data.data)} />
         </div>
       </figure>
       <p className="flex justify-between">

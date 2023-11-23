@@ -1,21 +1,21 @@
 import { useContext } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ShoppingCartContext } from '../../Context'
-import './index.css'
+import './styles.css'
 
 const CheckoutSideMenu = () => {
 
   const context = useContext(ShoppingCartContext)
-
+  
   return (
     <aside
-      className={`${context.isOpenProductDetail ? 'flex' : 'hidden'} z-10 product-detail flex flex-col fixed right-0 border-black rounded-lg bg-white`}>
+      className={`${context.isOpenChekcoutSideMenu ? 'flex' : 'hidden'} z-10 checkout-side-menu flex flex-col fixed right-0 border-black rounded-lg bg-white`}>
       <div className='flex justify-between items-center p-6'>
         <h2 className='font-medium text-xl'>My Order</h2>
         <div>
           <XMarkIcon
             className='h-6 w-6 text-black cursor-pointer'
-            onClick={() => context.closeProductDetail()} />
+            onClick={() => context.closeCheckoutSideMenu()} />
         </div>
       </div>
     </aside >
