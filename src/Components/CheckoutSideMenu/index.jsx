@@ -4,6 +4,7 @@ import { ShoppingCartContext } from '../../Context'
 import OrderCard from '../OrderCard'
 import { totalPrice } from '../../utils'
 import './styles.css'
+import { Link } from 'react-router-dom'
 
 const CheckoutSideMenu = () => {
 
@@ -56,7 +57,9 @@ const CheckoutSideMenu = () => {
           <span >Total:</span>
           <span className='font-medium'>${totalPrice(context.cartProducts)}</span>
         </p>
-        <button className='w-full mb-2 bg-gray-950 px-4 py-2 text-neutral-100 rounded-lg' onClick={() => handleCheckout()}>Checkout</button>
+        <Link to='/my-orders/last'>
+          <button className='w-full mb-2 bg-gray-950 px-4 py-2 text-neutral-100 rounded-lg' onClick={() => handleCheckout()}>Checkout</button>
+        </Link>
       </div>
     </aside >
   )
