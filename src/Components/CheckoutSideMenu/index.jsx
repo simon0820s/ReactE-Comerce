@@ -19,17 +19,17 @@ const CheckoutSideMenu = () => {
             onClick={() => context.closeCheckoutSideMenu()} />
         </div>
       </div>
-
-      {
-        context.cartProducts.map(product => (
-          <OrderCard
-            key={product.id}
-            title={product.title} 
-            imageUrl={product.images}
-            price={product.price}/>
-        ))
-      }
-
+      <div className='px-6 overflow-y-scroll'>
+        {
+          context.cartProducts.map(product => (
+            <OrderCard
+              key={product.id}
+              title={product.title}
+              imageUrl={product.images}
+              price={product.price} />
+          ))
+        }
+      </div>
     </aside >
   )
 }
