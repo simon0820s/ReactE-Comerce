@@ -10,15 +10,18 @@ const MyOrders = () => {
 
   return (
     <Layout>
-      MyOrders
-      {
-        context.order.map((order, index) => {
-          <Link key={index} to={`/my-orders/${order.id}`}>
-            <OrdersCard totalPrice={order.totalPrice} totalProducts={order.totalProducts} />
-          </Link>
-        })
-      }
-
+      <div className="flex flex-col gap-10">
+        <h1>My Orders</h1>
+        {
+          context.order.map((order, index) => {
+            <Link key={index} to={`/my-orders/${order.id}`}>
+              <OrdersCard
+                totalPrice={order.totalPrice}
+                totalProducts={order.totalProducts} />
+            </Link>
+          })
+        }
+      </div>
     </Layout>
   )
 }
