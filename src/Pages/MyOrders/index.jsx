@@ -10,8 +10,8 @@ const MyOrders = () => {
   
   return (
     <Layout>
-      <div className="flex flex-col gap-10">
-        <h1>My Orders</h1>
+      <div className="flex flex-col gap-2">
+        <h1 className="font-medium">My Orders</h1>
         {
           context.order.map((order, index) => (
             <Link key={index} to={`/my-orders/${index}`}>
